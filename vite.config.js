@@ -6,4 +6,3 @@ export default defineConfig({
   plugins: [react()],
   base:'https://Bryaan159.github.io/Music'
 })
-//probando cambios
