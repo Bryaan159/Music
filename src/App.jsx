@@ -1,9 +1,17 @@
 import React, { useRef, useState } from 'react';
+import Dashboard from './components/dashboard';
 import './App.css';
 
 function App() {
   const mainRef = useRef(null);
   const [isRightPanelActive, setRightPanelActive] = useState(false);
+
+  // Contraseña y email
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  // Estado de inicio de sesión
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSignUpClick = () => {
     setRightPanelActive(true);
@@ -12,6 +20,24 @@ function App() {
   const handleSignInClick = () => {
     setRightPanelActive(false);
   };
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+
+    if (email === '123@gmail.com' && password === '1234') {
+      setIsLoggedIn(true);
+    }
+  };
+
+  const handleSignOut = () => {
+    setIsLoggedIn(false);
+    setEmail('');
+    setPassword('');
+  };
+
+  if (isLoggedIn) {
+    return <Dashboard handleSignOut={handleSignOut} />;
+  }
 
   return (
     <div className={`container ${isRightPanelActive ? 'right-panel-active' : ''}`} ref={mainRef}>
@@ -23,8 +49,22 @@ function App() {
           </div> */}
           <p>Can you use your email for registration</p>
           <input type="text" name="txt" placeholder="Name" required="" />
-          <input type="email" name="email" placeholder="Email" required="" />
-          <input type="password" name="password" placeholder="Password" required="" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required=""
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required=""
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <button onClick={handleSignUpClick}>Sign Up</button>
         </form>
       </div>
@@ -36,10 +76,24 @@ function App() {
             <a href="#"><i className=""></i></a>
           </div> */}
           <p>Or use your account</p>
-          <input type="email" name="email" placeholder="Email" required="" />
-          <input type="password" name="password" placeholder="Password" required="" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required=""
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required=""
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <a href="#">Forget your Password?</a>
-          <button onClick={handleSignInClick}>Sign In</button>
+          <button onClick={handleSignIn} id="signIn">Sign In</button>
         </form>
       </div>
 
@@ -53,7 +107,7 @@ function App() {
 
           <div className="overlay-right">
             <h1>Hello, Friend!</h1>
-            <p>Enter your personal details and start journey with us</p>
+            <p>Enter your personal details and start your journey with us</p>
             <button onClick={handleSignUpClick} id="signUp">Sign Up</button>
           </div>
         </div>
