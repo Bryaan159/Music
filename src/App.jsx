@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useRef, useState } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const mainRef = useRef(null);
+  const [isRightPanelActive, setRightPanelActive] = useState(false);
+
+  const handleSignUpClick = () => {
+    setRightPanelActive(true);
+  };
+
+  const handleSignInClick = () => {
+    setRightPanelActive(false);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={`container ${isRightPanelActive ? 'right-panel-active' : ''}`} ref={mainRef}>
+      <div className="sign-up">
+        <form action="#">
+          <h1>Create account</h1>
+          {/* <div className="social-container">
+            <a href="#"><i className=""></i></a>
+          </div> */}
+          <p>Can you use your email for registration</p>
+          <input type="text" name="txt" placeholder="Name" required="" />
+          <input type="email" name="email" placeholder="Email" required="" />
+          <input type="password" name="password" placeholder="Password" required="" />
+          <button onClick={handleSignUpClick}>Sign Up</button>
+        </form>
       </div>
-      <h1>Sirenoman + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className="sign-in">
+        <form action="#">
+          <h1>Sign in</h1>
+          {/* <div className="social-container">
+            <a href="#"><i className=""></i></a>
+          </div> */}
+          <p>Or use your account</p>
+          <input type="email" name="email" placeholder="Email" required="" />
+          <input type="password" name="password" placeholder="Password" required="" />
+          <a href="#">Forget your Password?</a>
+          <button onClick={handleSignInClick}>Sign In</button>
+        </form>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <div className="overlay-container">
+        <div className="overlay">
+          <div className="overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button onClick={handleSignInClick} id="signIn">Sign In</button>
+          </div>
+
+          <div className="overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button onClick={handleSignUpClick} id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
