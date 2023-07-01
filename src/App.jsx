@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import Dashboard from './components/dashboard';
 import './App.css';
 
 function App() {
@@ -7,8 +6,8 @@ function App() {
   const [isRightPanelActive, setRightPanelActive] = useState(false);
 
   // Contraseña y email
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
 
   // Estado de inicio de sesión
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,23 +20,23 @@ function App() {
     setRightPanelActive(false);
   };
 
-  const handleSignIn = (e) => {
-    e.preventDefault();
+  // const handleSignIn = (e) => {
+  //   e.preventDefault();
 
-    if (email === '123@gmail.com' && password === '1234') {
-      setIsLoggedIn(true);
-    }
-  };
+  //   if (email === '123@gmail.com' && password === '1234') {
+  //     setIsLoggedIn(true);
+  //   }
+  // };
 
-  const handleSignOut = () => {
-    setIsLoggedIn(false);
-    setEmail('');
-    setPassword('');
-  };
+  // const handleSignOut = () => {
+  //   setIsLoggedIn(false);
+  //   setEmail('');
+  //   setPassword('');
+  // };
 
-  if (isLoggedIn) {
-    return <Dashboard handleSignOut={handleSignOut} />;
-  }
+  // if (isLoggedIn) {
+  //   return <Dashboard handleSignOut={handleSignOut} />;
+  // }
 
   return (
     <div className={`container ${isRightPanelActive ? 'right-panel-active' : ''}`} ref={mainRef}>
