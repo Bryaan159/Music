@@ -1,22 +1,49 @@
 import React, { useState } from "react";
+import Swal from 'sweetalert2';
 
 function CreatePlayList() {
   const [description, setDescription] = useState("");
   const maxLength = 10;
 
-  const handleChange = (event) => {
-    const { value } = event.target;
-    const words = value.trim().split(/\s+/);
-    const wordCountValue = words.length;
-    const remaining = maxLength - wordCountValue;
-    if (remaining <= 0) {
-      const trimValue = words.slice(0, maxLength).join(" ");
-      setDescription(trimValue);
-    }else{
-      setDescription(value);
-    }
+  const [scanResult, setScanResult] = useState(null);
 
+  //Funcion para el SweetAlert
+  const showNotification = (result) => {
+
+    if(result){
+      Swal.fire({
+        title: 'Se pudo crear la playlist!',
+        text: 'Felicidades ahora tienes una nueva playlist',
+        icon: 'success',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar',
+      }).then((result) => {
+        if (response.isConfirmed) {
+          window.open(result);
+        }
+      });
+    }
+    setScanResult(result);
+}
+  const handleCreatePlaylist = () => {
+    showNotification(true);
   };
+
+  // const handleChange = (event) => {
+  //   const { value } = event.target;
+  //   const words = value.trim().split(/\s+/);
+  //   const wordCountValue = words.length;
+  //   const remaining = maxLength - wordCountValue;
+  //   if (remaining <= 0) {
+  //     const trimValue = words.slice(0, maxLength).join(" ");
+  //     setDescription(trimValue);
+  //   }else{
+  //     setDescription(value);
+  //   }
+
+  // };
 
   return (
     <div className="create">
@@ -54,7 +81,7 @@ function CreatePlayList() {
               placeholder="Add a description"
               required
               value={description}
-              onChange={handleChange}
+              // onChange={handleChange}
             />
             {/* <span id="wordCount">{maxLength - description.length} words remaining</span> */}
           </div>
@@ -64,7 +91,7 @@ function CreatePlayList() {
       <div className="m-t-lg">
         <ul className="list-inline">
           <li>
-            <input className="btn btn--form" type="submit" value="Create" />
+            <input className="btn btn--form" type="submit" value="Create" onClick={handleCreatePlaylist} />
           </li>
         </ul>
       </div>
