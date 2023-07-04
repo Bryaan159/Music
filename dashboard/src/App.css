@@ -24,7 +24,7 @@
 
 /* Navbar CSS */
 .navbar {
-  background-color: #ffffff;
+  background-color: #dfdfdf;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -97,3 +97,167 @@
 span {
   margin-left: 16px;
 }
+.titleCreate{
+  justify-self: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 15%;
+}
+
+/* Para el formulario de Crear PlayList */
+.create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image_container {
+  position: relative;
+  width: 100%;
+  height: 260px;
+}
+
+.thumbnail_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.logo_text {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.thumbnail_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading_primary {
+  color: #fff;
+  font-size: 35px;
+  
+}
+
+.heading_secondary {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container_form {
+  margin-top: 30px;
+}
+
+.form_group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.container_child  {
+  padding: 3rem;
+  height: 100%;
+  width: 40%;
+  background: #fafafa;
+  margin-bottom: 35px;
+}
+#wordCount{
+  color: black;
+  font-size: 12px;
+  position: relative;
+  left: 72%;
+  top: -30px;
+
+}
+
+.form_group {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.list-inline{
+  text-decoration: none;
+}
+input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+ul.list-inline {
+  list-style: none;
+}
+
+ul.list-inline li {
+  display: inline-block;
+}
+
+ul.list-inline li a {
+  text-decoration: none;
+}
+
+
+input[type="submit"] {
+  padding: 0.5rem 2.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+  position: relative;
+  top: -12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background: #111;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in;
+}
+
+input[type="submit"]:hover {
+  background-color: #333;
+}
+ 
