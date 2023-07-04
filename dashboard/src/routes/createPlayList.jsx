@@ -56,7 +56,7 @@ function CreatePlayList() {
               value={description}
               onChange={handleChange}
             />
-            <span id="wordCount">{maxLength - description.length} words remaining</span>
+            {/* <span id="wordCount">{maxLength - description.length} words remaining</span> */}
           </div>
         </form>
       </div>

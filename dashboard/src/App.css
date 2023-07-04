@@ -105,18 +105,14 @@ span {
 }
 
 /* Para el formulario de Crear PlayList */
-.create {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+
 
 .image_container {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 130px;
+  bottom:238px;
+  right: -295px;
 }
 
 .thumbnail_img {
@@ -176,10 +172,14 @@ label {
 
 .container_child  {
   padding: 3rem;
-  height: 100%;
-  width: 40%;
+  height: 350px;
+  width: 50%;
+  border-radius: 8px;
   background: #fafafa;
   margin-bottom: 35px;
+  position: relative;
+  right: 310px;
+  
 }
 #wordCount{
   color: black;
@@ -207,7 +207,7 @@ textarea {
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #0F2027;
   border-radius: 3px;
 }
 select {
@@ -237,7 +237,8 @@ input[type="submit"] {
   font-size: 1.2rem;
   margin-bottom: 35px;
   position: relative;
-  top: -12px;
+  bottom:-210px;
+  right: 595px;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
