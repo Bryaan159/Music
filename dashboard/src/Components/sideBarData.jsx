@@ -1,15 +1,32 @@
-import React from 'react';
+import React from "react";
 import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import * as IoIcons from "react-icons/io";
 
-export const SideBarData = [
+export const SidebarData = [
     {
-        title: 'Create Play List',
-        path: '/create-playlist',
-        icon: <FaIcons.FaHome />,
+        title: "Create Play List",
+        path: "/",
+        icon: <AiIcons.AiFillHome />,
+        cName: "nav-text",
     },
     {
-        title: 'List of PlayList',
-        path: '/list-of-playlist',
-        icon: <FaIcons.FaBook />,
+        title: "List Of Play List",
+        path: "/list",
+        icon: <IoIcons.IoIosPaper />,
+        cName: "nav-text",
     },
+    {
+        title: "New Song",
+        path: "/new",
+        icon: <FaIcons.FaCartPlus />,
+        cName: "nav-text",
+    },
+    {
+        title: "View Play List",
+        path: "/view",
+        icon: <IoIcons.IoMdPeople />,
+        cName: "nav-text",
+    },
+
 ];
