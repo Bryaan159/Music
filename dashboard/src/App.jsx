@@ -1,10 +1,15 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from './Login';
+import CreatePlayList from './CreatePlayList';
 
 function App() {
-  //Se debe de guardar todo esto
   return (
-    <div className="App">
-      <h1>Hola mundo</h1>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route path="/create-playlist" component={CreatePlayList} />
+      </Switch>
+    </Router>
   );
 }
 

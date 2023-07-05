@@ -34,16 +34,12 @@ function NewSong() {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Aceptar',
-      }).then((result) => {
-        if (response.isConfirmed) {
-          window.open(result);
-        }
-      });
+      })
     }
     setScanResult(result);
   }
   const handleCreatePlaylist = () => {
-    showNotification(true);
+    // showNotification(true);
   };
 
 
@@ -69,7 +65,9 @@ function NewSong() {
           placeholder="HH:mm:ss"
           required
         />
-        <input id="btnEnviar" type="submit" value="Enviar" onClick={handleCreatePlaylist} />
+        <button id="btnEnviar" type="submit" value="Enviar" onClick={handleCreatePlaylist}>
+          Agregar
+        </button>
       </form>
     </div>
   );
