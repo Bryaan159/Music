@@ -442,19 +442,17 @@ label {
 }
 
 #btnEnviar {
-  padding: 10px;
-  font-size: 20px;
-  font-weight: bold;
+  padding: 0.5rem 2.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
   color: #fff;
-  background-color: #007bff;
+  background: #203A43;
+  border-radius: 5px;
   border: none;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  left:150px;
-  bottom: -25px;
-  border-radius: 3px;
   cursor: pointer;
+  transition: background-color 0.25s ease-in;
 }
 .img{
   width: 340px;

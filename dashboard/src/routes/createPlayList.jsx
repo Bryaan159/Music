@@ -30,11 +30,7 @@ function CreatePlayList() {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Aceptar',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.open(result);
-      }
-    });
+    })
   };
 
   return (
