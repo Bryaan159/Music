@@ -54,7 +54,7 @@ function NewSong() {
         <img src={imagen} alt="logo" className="img" />
       </div>
 
-      <form>
+      <form action="#" id="form">
         <label htmlFor="name">Titulo de la canción:</label>
         <input type="text" id="name" name="name" required />
 
@@ -69,7 +69,7 @@ function NewSong() {
           placeholder="HH:mm:ss"
           required
         />
-        <input type="submit" value="Enviar" onClick={handleCreatePlaylist} />
+        <input id="btnEnviar" type="submit" value="Enviar" onClick={handleCreatePlaylist} />
       </form>
     </div>
   );
