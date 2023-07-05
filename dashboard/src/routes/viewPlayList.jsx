@@ -4,6 +4,7 @@ const playlists = [
     {
       id: 1,
       name: "All Out 80s",
+      description: "Album",
       image: "https://i.scdn.co/image/ab67706f00000003e6ed19ecc791fce2ec58d005",
       songs: [
         { id: 1, title: "Girls Just Wanna Have Fun", plays: 957800, duration: "3:30" },
@@ -29,13 +30,15 @@ const playlists = [
               <div className="viewPlaylist-image">
                 <img src={playlist.image} alt={playlist.name} />
               </div>
-              <h1 className="viewPlaylist-name">{playlist.name}</h1>
+              <h1 className="viewPlaylist-name">{playlist.name}</h1>      
               <ul>
+              <p className="viewPlaylist-description">{playlist.description}</p> 
                 {playlist.songs.map((song) => (
-                  <li key={song.id} className="viewPlaylist-song">
+                  <li key={song.id} className="viewPlaylist-song">     
                     <div className="viewPlaylist-song-title">{song.title}</div>
                     <div className="viewPlaylist-song-reproductions">Reproducciones: {song.plays}</div>
                     <div className="viewPlaylist-song-time">Duración: {song.duration}</div>
+                   
                   </li>
                 ))}
               </ul>

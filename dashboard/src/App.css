@@ -114,29 +114,39 @@ span {
 /*Detalle de playlist */
 
 .viewPlaylist li {
-  margin-top: 10px;
+  margin-top: 6px;
   display: flex;
   justify-content: space-between;
 }
 
 .viewPlaylist-song-title {
   flex-grow: 1;
+  text-align: left;
 }
 
 .viewPlaylist-song-reproductions,
 .viewPlaylist-song-time {
   flex-basis: 30%;
+  text-align: right;
 }
 
 .viewPlaylist-song-title {
+  margin-top: -90px;
+  margin-left: 50px;
   color: #ffff; 
 }
 .viewPlaylist-song-reproductions{
+  margin-top: -90px;
+  margin-right: 150px;
   color: #ffff; 
 }
 .viewPlaylist-song-time {
+  position: relative;
+  top: -100px;
+  margin-right: 120px;
   color: #ffff; 
 }
+
 .viewPlaylist-name{
 text-align: center;
 color: #fff;
@@ -148,13 +158,35 @@ color: #fff;
 }
 
 .viewPlaylist-image {
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
   margin: 0 auto;
-  width: 50%; 
+  width: 50%;
   padding: 50px;
+  margin-left: -200px; /* Desplaza la imagen hacia la izquierda */
 }
 
+.viewPlaylist-image img {
+  width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+  height: auto; /* Ajusta la altura de la imagen automáticamente en proporción al ancho */
+  max-height: 250px; /* Establece una altura máxima para la imagen */
+  object-fit: contain; /* Controla cómo se ajusta la imagen dentro de su contenedor */
+}
 
+.viewPlaylist-name {
+  font-size: 50px;
+  position: relative;
+  top: -200px; 
+  margin-left: -580px;
+}
+
+.viewPlaylist-description {
+  position: relative;
+  left: 335px;
+  top: -320px;
+  color: #fff;
+  font-size: 25px;
+}
 
 /*Lista de playlist */
 #playlists{
@@ -530,11 +562,11 @@ body {
 } */
 
 .container {
+  background-color: #ffff;
   position: relative;
   width: 100%;
   max-width: 768px;
   min-height: 480px;
-  background: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 14px 10px rgba(0, 0, 0, 0.25);
@@ -561,12 +593,14 @@ body {
 }
 
 #form2 {
-  background: #fff;
+
+  padding: 30px 30px; 
+  margin: 0 auto; 
+  background: #ffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 30px;
   height: 100%;
   text-align: center;
 }
@@ -603,13 +637,13 @@ a {
 
 button {
   color: #fff;
-  background: #667eea;
+  background: #366372;
   font-size: 12px;
   font-weight: bold;
   padding: 12px 40px;
   margin: 20px 0;
   border-radius: 8px;
-  border: 1px solid #667eea;
+  border: 1px solid #366372;
   outline: none;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -655,7 +689,7 @@ button:active {
 .overlaY {
   position: relative;
   color: #fff;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a465a 0%, #366372 100%);
   left: -100%;
   height: 100%;
   width: 200%;
