@@ -289,7 +289,7 @@ label {
   color: black;
   font-size: 12px;
   position: relative;
-  left: 72%;
+  left: 60%;
   top: -30px;
 
 }
@@ -442,12 +442,13 @@ input[type="submit"]:hover {
     
   }
   
-  input[type="submit"] {
+.btnEnter{
     position: relative;
-    top:270px;
+    top:20px;
     left:-130px;
   }
 }
+
 /* New Song */
 .new {
   display: flex;
@@ -455,7 +456,7 @@ input[type="submit"]:hover {
   align-items: center;
 }
 
-form {
+#form {
   width: 440px;
   height: 400px;
   padding: 20px;
@@ -472,7 +473,7 @@ label {
   margin-bottom: 5px;
 }
 
-input[type="submit"] {
+#btnEnviar {
   padding: 10px;
   font-size: 20px;
   font-weight: bold;

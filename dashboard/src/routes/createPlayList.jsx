@@ -3,14 +3,27 @@ import Swal from 'sweetalert2';
 
 function CreatePlayList() {
   const [description, setDescription] = useState("");
-  const maxLength = 10;
+  const maxLength = 100;
+
+  const handleChange = (event) => {
+    const { value } = event.target;
+    const words = value.trim().split(/\s+/);
+    const wordCountValue = words.length;
+    const remaingWords = maxLength - wordCountValue;
+    if (remaingWords >= 0) {
+      setDescription(value);
+    } else {
+      const trimValue = words.slice(0, 10).join(" ");
+      setDescription(trimValue);
+    }
+  };
 
   const [scanResult, setScanResult] = useState(null);
 
   //Funcion para el SweetAlert
   const showNotification = (result) => {
 
-    if(result){
+    if (result) {
       Swal.fire({
         title: 'Se pudo crear la playlist!',
         text: 'Felicidades ahora tienes una nueva playlist',
@@ -26,7 +39,7 @@ function CreatePlayList() {
       });
     }
     setScanResult(result);
-}
+  }
   const handleCreatePlaylist = () => {
     showNotification(true);
   };
@@ -63,13 +76,14 @@ function CreatePlayList() {
             <textarea
               className="form-control"
               type="text"
+              maxLength={maxLength}
               id="description"
               placeholder="Add a description"
               required
               value={description}
-              // onChange={handleChange}
+              onChange={handleChange}
             />
-            {/* <span id="wordCount">{maxLength - description.length} words remaining</span> */}
+            <span id="wordCount">{maxLength - description.length} words remaining</span>
           </div>
         </form>
       </div>
