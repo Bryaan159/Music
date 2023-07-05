@@ -103,6 +103,48 @@ span {
   position: absolute;
   top: 15%;
 }
+/*Detalle de playlist */
+
+.viewPlaylist li {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.viewPlaylist-song-title {
+  flex-grow: 1;
+}
+
+.viewPlaylist-song-reproductions,
+.viewPlaylist-song-time {
+  flex-basis: 30%;
+}
+
+.viewPlaylist-song-title {
+  color: #ffff; 
+}
+.viewPlaylist-song-reproductions{
+  color: #ffff; 
+}
+.viewPlaylist-song-time {
+  color: #ffff; 
+}
+.viewPlaylist-name{
+text-align: center;
+color: #fff;
+}
+
+.viewPlayList-container {
+  background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
+  background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
+}
+
+.viewPlaylist-image {
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%; 
+  padding: 50px;
+}
 
 /*Lista de playlist */
 #playlists{
