@@ -31,20 +31,6 @@ function CreatePlayList() {
     showNotification(true);
   };
 
-  // const handleChange = (event) => {
-  //   const { value } = event.target;
-  //   const words = value.trim().split(/\s+/);
-  //   const wordCountValue = words.length;
-  //   const remaining = maxLength - wordCountValue;
-  //   if (remaining <= 0) {
-  //     const trimValue = words.slice(0, maxLength).join(" ");
-  //     setDescription(trimValue);
-  //   }else{
-  //     setDescription(value);
-  //   }
-
-  // };
-
   return (
     <div className="create">
       <div className="image_container container_thumnail">
