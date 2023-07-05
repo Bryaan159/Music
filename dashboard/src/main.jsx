@@ -12,7 +12,8 @@ import ListOfPlayList from "./routes/listOfPlayList";
 import CreatePlayList from "./routes/createPlayList";
 import NewSong from "./routes/newSong";
 import ViewPlayList from "./routes/viewPlayList";
-import Navbar from "./components/NavBar";
+import Navbar from "./Components/NavBar";
+import Login from "./Components/Login";
 import "./App.css";
 
 const AppLayout = () => (
@@ -22,13 +23,17 @@ const AppLayout = () => (
   </>
 );
 
-
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
   {
     element: <AppLayout />,
     children: [
       {
-        path: "/",
+        index: true,
+        path: "/create",
         element: <CreatePlayList />,
       },
       {
@@ -42,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: "view",
         element: <ViewPlayList />,
-      }
+      },
     ],
   },
 ]);

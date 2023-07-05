@@ -69,7 +69,7 @@ function NewSong() {
           placeholder="HH:mm:ss"
           required
         />
-        <input id="btnEnviar" type="submit" value="Enviar" onClick={handleCreatePlaylist} />
+        <button id="btnEnviar" type="submit" value="Enviar" onClick={handleCreatePlaylist} />
       </form>
     </div>
   );

@@ -1,47 +1,40 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
 function CreatePlayList() {
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState('');
   const maxLength = 100;
 
   const handleChange = (event) => {
     const { value } = event.target;
     const words = value.trim().split(/\s+/);
     const wordCountValue = words.length;
-    const remaingWords = maxLength - wordCountValue;
-    if (remaingWords >= 0) {
+    const remainingWords = maxLength - wordCountValue;
+    if (remainingWords >= 0) {
       setDescription(value);
     } else {
-      const trimValue = words.slice(0, 10).join(" ");
-      setDescription(trimValue);
+      const trimmedValue = words.slice(0, 10).join(' ');
+      setDescription(trimmedValue);
     }
   };
 
-  const [scanResult, setScanResult] = useState(null);
-
-  //Funcion para el SweetAlert
-  const showNotification = (result) => {
-
-    if (result) {
-      Swal.fire({
-        title: 'Se pudo crear la playlist!',
-        text: 'Felicidades ahora tienes una nueva playlist',
-        icon: 'success',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Aceptar',
-      }).then((result) => {
-        if (response.isConfirmed) {
-          window.open(result);
-        }
-      });
-    }
-    setScanResult(result);
-  }
   const handleCreatePlaylist = () => {
-    showNotification(true);
+    // Lógica para crear la playlist
+
+    // Muestra el SweetAlert
+    Swal.fire({
+      title: 'Se pudo crear la playlist!',
+      text: 'Felicidades ahora tienes una nueva playlist',
+      icon: 'success',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.open(result);
+      }
+    });
   };
 
   return (
@@ -91,7 +84,9 @@ function CreatePlayList() {
       <div className="m-t-lg">
         <ul className="list-inline">
           <li>
-            <input className="btn btn--form" type="submit" value="Create" onClick={handleCreatePlaylist} />
+            <button id="btnEnter" type="submit" value="Create" onClick={handleCreatePlaylist}>
+              Create
+            </button>
           </li>
         </ul>
       </div>

@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
-/* Login */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,6 +19,15 @@
   background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
   background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
   color: #fff;
+}
+#cuadro{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  left: 300px;
+  top: 90px;
 }
 
 /* Navbar CSS */
@@ -105,6 +111,8 @@ span {
   position: absolute;
   top: 15%;
 }
+
+
 
 /*Lista de playlist */
 #playlists{
@@ -203,7 +211,7 @@ span {
 .heading_primary {
   color: #fff;
   font-size: 35px;
-  
+
 }
 
 .heading_secondary {
@@ -243,7 +251,7 @@ label {
   margin-bottom: 35px;
   position: relative;
   right: 310px;
-  
+
 }
 #wordCount{
   color: black;
@@ -296,7 +304,7 @@ ul.list-inline li a {
 }
 
 
-input[type="submit"] {
+#btnEnter {
   padding: 0.5rem 2.5rem;
   font-size: 1.2rem;
   margin-bottom: 35px;
@@ -313,10 +321,10 @@ input[type="submit"] {
   transition: background-color 0.25s ease-in;
 }
 
-input[type="submit"]:hover {
+#btnEnter[type="submit"]:hover {
   background-color: #333;
 }
- 
+
 @media (max-width: 690px) {
   .image_container {
     position: relative;
@@ -333,9 +341,9 @@ input[type="submit"]:hover {
     align-items: center;
     right: 45px;
     justify-content: center;
-    
+
   }
-  
+
   .heading_secondary {
     color: #fff;
     font-size: 15px;
@@ -353,9 +361,9 @@ input[type="submit"]:hover {
     margin-bottom: -55px;
     position: relative;
     right: 30px;
-    
+
   }
-  
+
   input[type="submit"] {
     position: relative;
     top:270px;
@@ -379,9 +387,9 @@ input[type="submit"]:hover {
     align-items: center;
     right: 109px;
     justify-content: center;
-    
+
   }
-  
+
   .heading_secondary {
     color: #fff;
     font-size: 15px;
@@ -399,9 +407,9 @@ input[type="submit"]:hover {
     margin-bottom: -55px;
     position: relative;
     left: 50px;
-    
+
   }
-  
+
 .btnEnter{
     position: relative;
     top:20px;
@@ -449,10 +457,10 @@ label {
   cursor: pointer;
 }
 .img{
-  width: 400px;
+  width: 340px;
   height: auto;
   position: relative;
-  right: 355px;
+  right: 245px;
   top:115px;
 }
 .newSong{
@@ -463,3 +471,240 @@ label {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/* Login */
+@import url('https://fonts.googleapis.com/css2?family=Monserrat:400,800');
+
+/* * {
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #f6f5f7;
+  font-family: 'monserrat', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+} */
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 768px;
+  min-height: 480px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 14px 10px rgba(0, 0, 0, 0.25);
+}
+
+.sign-up,
+.sign-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-up {
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.sign-in {
+  width: 50%;
+  z-index: 2;
+}
+
+#form2 {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  height: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 15px 0 20px;
+}
+
+input {
+  background-color: #eee;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+button {
+  color: #fff;
+  background: #667eea;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 40px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid #667eea;
+  outline: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+#signIn,
+#signUp {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+.container.right-panel-active .sign-in {
+  transform: translateX(100%);
+}
+
+.container.right-panel-active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.overlaY-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlaY-container {
+  transform: translateX(-100%);
+}
+
+.overlaY {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlaY {
+  transform: translateX(50%);
+}
+
+.overlaY-left,
+.overlaY-right {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlaY-left {
+  transform: translateX(-20%);
+}
+
+.overlaY-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlaY-left {
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlaY-right {
+  transform: translateX(20%);
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 768px;
+    min-height: 480px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 14px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .sign-up,
+  .sign-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+    width: 100%;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .sign-up {
+    transform: translateX(100%);
+  }
+
+  .sign-in {
+    transform: translateX(0);
+    z-index: 2;
+  }
+
+  .container.right-panel-active .sign-in {
+    transform: translateX(-100%);
+  }
+
+  .container.right-panel-active .sign-up {
+    transform: translateX(0);
+  }
+
+  .overlaY-container {
+    display: none;
+  }
+
+  .container.right-panel-active .overlaY-container {
+    display: block;
+  }
+}
